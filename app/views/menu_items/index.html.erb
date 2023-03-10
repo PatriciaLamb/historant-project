@@ -1,0 +1,13 @@
+<div class="container">
+  <div class="row row-cols-1 row-cols-md-3 g-4">
+    <% @menu_items.each do |menu_item| %>
+      <div class="col">
+        <%= link_to menu_item_path(menu_item) do %>
+          <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
+            <%= menu_item.name %>
+          </div>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+</div>

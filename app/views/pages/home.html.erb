@@ -1,2 +1,13 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="container">
+  <div class="row">
+    <div class="card mx-auto col-sm-6 mt-5 border-0 home">
+      <strong><h1>Welcome to</h1></strong>
+      <img src="https://res.cloudinary.com/dwrkiuiqa/image/upload/v1678205141/Historant-logo-BIG-LOGO_vhiqzm.png" width="200" class="card-img-top" alt="Logo">
+      <div class="card-body text-center">
+        <h3>Already a member? <%= link_to "Log in", user_session_path %> </h3>
+        <h3>New to Historant? <%= link_to "Sign up", new_user_registration_path %></h3>
+        <h3> <%= link_to "Sign out", destroy_user_session_path, data: {turbo_method: :delete} %> </h3>
+      </div>
+    </div>
+  </div>
+</div>

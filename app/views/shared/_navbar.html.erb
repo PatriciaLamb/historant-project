@@ -1,36 +1,52 @@
-<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+<nav class="navbar navbar-light d-flex sticky-top row justify-content-around">
   <div class="container-fluid">
-    <%= link_to "#", class: "navbar-brand" do %>
-      <%= image_tag "https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/logo.png" %>
-    <% end %>
-
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
+    <!-- New -->
+    <button class="navbar-icon btn fa-2x magnifier-icon flex-fill" type="button">
+      <%= link_to "/" do %>
+      <i class="fa-sharp fa-solid fa-plus text-white"></i>
+      <% end %>
     </button>
-
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto">
-        <% if user_signed_in? %>
-          <li class="nav-item active">
-            <%= link_to "Home", "#", class: "nav-link" %>
+    <!-- Search -->
+    <button class="navbar-icon magnifier-icon btn fa-2x flex-fill" type="button">
+      <%= link_to "/search" do %>
+      <i class="fa-sharp fa-solid fa-magnifying-glass text-white"></i>
+      <% end %>
+    </button>
+    <!-- Logo -->
+    <%= link_to "/", class: "navbar-brand flex-fill justify-content-center" do %>
+      <%= image_tag "https://res.cloudinary.com/dwrkiuiqa/image/upload/v1678439564/Historant-logo-BIG-LOGO-WHITE_huxdwd.png" %>
+    <% end %>
+    <!-- Menu -->
+    <button class="navbar-icon navbar-toggler btn fa-2x flex-fill" id="navbar-button" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+      <span class="fa-sharp fa-solid fa-bars"></span>
+    </button>
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasNavbarLabel"><strong>Menu</strong></h5>
+        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+      <div class="offcanvas-body">
+        <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="/">Home</a>
           </li>
           <li class="nav-item">
-            <%= link_to "Messages", "#", class: "nav-link" %>
+            <a class="nav-link active" aria-current="page" href="/profile">Profile</a>
           </li>
-          <li class="nav-item dropdown">
-            <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-              <%= link_to "Action", "#", class: "dropdown-item" %>
-              <%= link_to "Another action", "#", class: "dropdown-item" %>
-              <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %>
-            </div>
-          </li>
-        <% else %>
           <li class="nav-item">
-            <%= link_to "Login", new_user_session_path, class: "nav-link" %>
+            <a class="nav-link active" aria-current="page" href="/dashboard">Dashboard</a>
           </li>
-        <% end %>
-      </ul>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="/places">Places</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="/menu_items">Menu Items</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-danger" href="/users/sign_out" data-turbo-method="delete" >Sign out</a>
+          </li>
+        </ul>
+      </div>
     </div>
   </div>
-</div>
+</nav>

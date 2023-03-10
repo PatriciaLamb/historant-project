@@ -1,12 +1,48 @@
-.navbar-lewagon {
+.navbar {
   justify-content: space-between;
-  background: white;
+  background-color: #A84448;
 }
 
-.navbar-lewagon .navbar-collapse {
-  flex-grow: 0;
+.navbar-brand img {
+  width: 150px;
 }
 
-.navbar-lewagon .navbar-brand img {
-  width: 40px;
+.navbar-icon {
+  width: 10px;
+}
+
+.navbar li {
+  color: white;
+}
+
+.btn {
+  color: white;
+}
+
+#navbar-button {
+  border: none;
+}
+
+.navbar-toggler:focus,
+.navbar-toggler:active,
+.navbar-toggler-icon:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+.magnifier-icon:focus,
+.magnifier-icon:active {
+  outline: none;
+  box-shadow: none;
+}
+
+.btn.show {
+  color: white;
+  background-color: #A84448;
+  border-color: #A84448;
+}
+
+.btn:hover {
+  color: white;
+  text-decoration: none;
 }

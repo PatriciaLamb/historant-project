@@ -1,0 +1,31 @@
+.card-showpage {
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+
+.card-showpage > img {
+  height: 200px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.card-showpage h2 {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 0;
+}
+
+.card-showpage p {
+  font-size: 14px;
+  opacity: 1;
+  margin-bottom: 0;
+}
+
+.card-showpage .card-showpage-infos {
+  padding: 16px;
+}
+
+.card-review {
+  padding: 16px;
+}
