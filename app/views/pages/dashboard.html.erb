@@ -1,10 +1,13 @@
 <div class="container">
 
   <h2 style = "text-align: center;">Dashboard</h2>
-  <h5 style = "margin-bottom: 3px;">Places you have visited</h5>
-  <div class="d-flex justify-content-end">
-    <%= link_to "see all", places_path, style: "text-decoration: none; color: black; font-size: 15px;" %>
-  </div>
+  
+  <h5 style = "margin-bottom: 1px;">Places you have visited</h5>
+  <div class="d-flex justify-content-end" style="position: relative;">
+  <%= link_to places_path do %>
+    See All <i class="fa-solid fa-eye"></i>
+  <% end %>
+</div>
 
 <ul class="list-group" data-places-target="list">
   <% @places.each do |place| %>
@@ -44,11 +47,12 @@
 
   <br>
 
+<h5 style = "margin-bottom: 1px;">your recent orders</h5>
+<div class="d-flex justify-content-end" style="position: relative;">
+  <%= link_to menu_items_path do %>
+     See All  <i class="fa-solid fa-eye"></i>
+  <% end %>
 
- 
-  <h5 style = "margin-bottom: 3px;">You Have Eaten</h5>
-  <div class="d-flex justify-content-end" style="position: relative;">
-  <%= link_to "see all", menu_items_path, style: "text-decoration: none; mx-15px; color: black; font-size: 15px;" %>
 </div>
 <ul class="list-group" data-menu_items-target="list">
     <% @menu_items.each do |menu_item| %>
