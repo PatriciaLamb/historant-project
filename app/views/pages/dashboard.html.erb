@@ -1,6 +1,21 @@
 <div class="container">
-  <h1>Dashboard</h1>
-  <h2>Your recent places</h2>
+
+  <h2 style = "text-align: center;">Dashboard</h2>
+  <h5 style = "margin-bottom: 3px;">Places you have visited</h5>
+  <div class="d-flex justify-content-end">
+    <%= link_to "see all", places_path, style: "text-decoration: none; color: black; font-size: 15px;" %>
+  </div>
+
+<ul class="list-group" data-places-target="list">
+  <% @places.each do |place| %>
+    <% if place.name == "1" %>
+      <li class="list-group-item"><%= place.name %></li>
+    <% else %>
+      <li class="list-group-item" hidden><%= place.name %></li>
+    <% end %>
+  <% end %>
+</ul>
+
 <% unless @places.nil? %>
   <div id="places-carousel" class="carousel slide" data-bs-ride="carousel">
     <ol class="carousel-indicators">
@@ -24,24 +39,27 @@
       <span class="visually-hidden">Next</span>
     </a>
   </div>
-    <div class="d-flex justify-content-end">
-    <%= link_to "see all", places_path, style: "text-decoration: none; color: red; font-size: 12px;" %>
-  </div>
 
-  <ul class="list-group" data-places-target="list">
-    <% @places.each do |place| %>
-      <% if place.name == "1" %>
-        <li class="list-group-item"><%= place.name %></li>
-      <% else %>
-        <li class="list-group-item" hidden><%= place.name %></li>
-      <% end %>
-    <% end %>
-  </ul>
 <% end %>
 
   <br>
 
-  <h2>Your recent orders</h2>
+
+ 
+  <h5 style = "margin-bottom: 3px;">You Have Eaten</h5>
+  <div class="d-flex justify-content-end" style="position: relative;">
+  <%= link_to "see all", menu_items_path, style: "text-decoration: none; mx-15px; color: black; font-size: 15px;" %>
+</div>
+<ul class="list-group" data-menu_items-target="list">
+    <% @menu_items.each do |menu_item| %>
+      <% if menu_item.name == "1" %>
+        <li class="list-group-item"><%= menu_item.name %></li>
+      <% else %>
+        <li class="list-group-item" hidden><%= menu_item.name %></li>
+      <% end %>
+    <% end %>
+  </ul>
+
   <div id="menu_items-carousel" class="carousel slide" data-bs-ride="carousel">
     <div class="carousel-inner">
       <% @menu_items.each_with_index do |menu_item, index| %>
@@ -60,16 +78,3 @@
     </button>
   </div>
 </div>
-
-<div class="d-flex justify-content-end" style="position: relative; right: 125px;">
-  <%= link_to "see all", menu_items_path, style: "text-decoration: none; mx-15px; color: red; font-size: 12px;" %>
-</div>
-<ul class="list-group" data-menu_items-target="list">
-    <% @menu_items.each do |menu_item| %>
-      <% if menu_item.name == "1" %>
-        <li class="list-group-item"><%= menu_item.name %></li>
-      <% else %>
-        <li class="list-group-item" hidden><%= menu_item.name %></li>
-      <% end %>
-    <% end %>
-  </ul>

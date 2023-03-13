@@ -1,6 +1,7 @@
 class MenuItem < ApplicationRecord
   include PgSearch::Model
 
+
   belongs_to :place
   has_one_attached :photo
   has_one :user, through: :place

@@ -8,11 +8,11 @@ Rails.application.routes.draw do
   get "map", to: "pages#map"
 
 
-  resources :places, only: %i[new create destroy show index] do # edit update
+  resources :places, only: %i[new create destroy show index edit update] do # edit update
     resources :menu_items, only: %i[new create]
   end
 
-  resources :menu_items, only: %i[destroy show index] # edit update
+  resources :menu_items, only: %i[new show index edit update destory] # edit update
   # Defines the root path route ("/")
   # root "articles#index"
 end

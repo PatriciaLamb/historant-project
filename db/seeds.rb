@@ -11,6 +11,7 @@ MenuItem.destroy_all
 Place.destroy_all
 User.destroy_all
 
+
 user = User.create(
   email: "user@admin.com",
   password: "123456",
