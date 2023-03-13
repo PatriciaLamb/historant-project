@@ -1,0 +1,12 @@
+<%= link_to menu_item_path(menu_item), class:"card-link" do%>
+  <% if menu_item.photo.attached? %>
+    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path menu_item.photo.key %>')">
+      <%= menu_item.name %>
+    </div>
+
+  <% else %>
+    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
+      <%= menu_item.name %>
+    </div>
+  <% end %>
+<% end %>
