@@ -8,26 +8,23 @@
     <p><strong>Address: &nbsp</strong><%= @place.address %></p>
   </div>
 
-  <% if @place.menu_items.present? %>
-    <% @place.menu_items.each do |menu_item| %>
-      <div class="card mt-3 text-center">
-      <h1><%= menu_item.name %></h1>
-      <p><strong>Category: &nbsp</strong><%= menu_item.category %></p>
-      <p><strong>Visited on: &nbsp</strong><%= menu_item.visit_date.strftime("%A, %b %d") %></p>
-      <p><strong>Rating: &nbsp</strong><%= menu_item.rating %></p>
-      </div>
+  <div class="row row-cols-1 row-cols-md-3 g-4">
+    <% if @place.menu_items.present? %>
+      <% @place.menu_items.each do |menu_item| %>
+        <%= render "menu_items/menu_item_card", menu_item: menu_item %>
+      <% end %>
+    <% else %>
+    <div class="card">
+      <p>You have not been to <%= @place.name %> yet!</p>
+    </div>
     <% end %>
-  <% else %>
-  <div class="card">
-    <p>You have not been to <%= @place.name %> yet!</p>
   </div>
-  <% end %>
 
   <% if user_signed_in? && current_user == @place.user %>
-  <%= link_to "Edit", edit_place_path(@place), class: "btn btn-primary" %>
+    <%= link_to "Edit", edit_place_path(@place), class: "btn btn-primary" %>
 
- <%= link_to "Delete",
-  place_path(@place), class: "btn btn-danger",
-  data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}%>
+    <%= link_to "Delete",
+    place_path(@place), class: "btn btn-danger",
+    data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}%>
   <% end %>
 </div>

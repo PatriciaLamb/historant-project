@@ -1,0 +1,23 @@
+<div class="container">
+  <div class="search">
+      <%= form_with url: search_path, method: :get, class: "d-flex" do %>
+      <%= text_field_tag :query,
+        params[:query],
+        class: "form-control me-3",
+        placeholder: "Search a keyword ..."
+      %>
+      <%= submit_tag "Search", class: "btn-ghost" %>
+    <% end %>
+
+    <% if flash.now[:notice].present? %>
+    <div class="alert alert-info mt-3">
+        <%= flash.now[:notice] %>
+      </div>
+    <% end %>
+  </div>
+  <div class="row row-cols-1 row-cols-md-3 g-4">
+    <% @menu_items.each do |item| %>
+      <%= render "menu_items/menu_item_card", menu_item: item %>
+    <% end %>
+  </div>
+</div>
