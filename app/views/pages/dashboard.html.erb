@@ -1,13 +1,28 @@
 <div class="container">
   <h1>Dashboard</h1>
   <h2>Places you have visited</h2>
-<% unless @places.nil? %>
-  <div id="places-carousel" class="carousel slide" data-bs-ride="carousel">
+    <div class="d-flex justify-content-end">
+    <%= link_to "see all", places_path, style: "text-decoration: none; color: black; font-size: 15px;" %>
+  </div>
+
+  <ul class="list-group" data-places-target="list">
+    <% @places.each do |place| %>
+      <% if place.name == "1" %>
+        <li class="list-group-item"><%= place.name %></li>
+      <% else %>
+        <li class="list-group-item" hidden><%= place.name %></li>
+      <% end %>
+    <% end %>
+  </ul>
+
+  <% unless @places.nil? %>
+    <div id="places-carousel" class="carousel slide" data-bs-ride="carousel">
     <ol class="carousel-indicators">
       <% @places.each_with_index do |place, index| %>
         <li data-bs-target="#places-carousel" data-bs-slide-to="<%= index %>" class="<%= 'active' if index == 0 %>"></li>
       <% end %>
     </ol>
+
     <div class="carousel-inner">
       <% @places.each_with_index do |place, index| %>
         <div class="carousel-item <%= 'active' if index == 0 %>">
@@ -33,50 +48,18 @@
       <span class="visually-hidden">Next</span>
     </a>
   </div>
-    <div class="d-flex justify-content-end">
-    <%= link_to "see all", places_path, style: "text-decoration: none; color: red; font-size: 12px;" %>
-  </div>
-
-  <ul class="list-group" data-places-target="list">
-    <% @places.each do |place| %>
-      <% if place.name == "1" %>
-        <li class="list-group-item"><%= place.name %></li>
-      <% else %>
-        <li class="list-group-item" hidden><%= place.name %></li>
-      <% end %>
-    <% end %>
-  </ul>
 <% end %>
 
   <br>
 
-  <h2>You Have Eaten</h2>
-  <div id="menu_items-carousel" class="carousel slide" data-bs-ride="carousel">
-    <div class="carousel-inner">
-      <% @menu_items.each_with_index do |menu_item, index| %>
-        <div class="carousel-item <%= 'active' if index == 0 %>">
-          <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path menu_item.photo.key %>')">
-            <%= menu_item.name %>
-          </div>
-        </div>
-      <% end %>
-    </div>
-    <button class="carousel-control-prev" type="button" data-bs-target="#menu_items-carousel" data-bs-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Previous</span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#menu_items-carousel" data-bs-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Next</span>
-    </button>
-  </div>
-</div>
 
-<div class="d-flex justify-content-end" style="position: relative; right: 125px;">
-  <%= link_to "see all", menu_items_path, style: "text-decoration: none; mx-15px; color: red; font-size: 12px;" %>
-</div>
-<ul class="list-group" data-menu_items-target="list">
-    <% @menu_items.each do |menu_item| %>
+
+  <h2>You Have Eaten</h2>
+  <div class="d-flex justify-content-end" style = "margin-bottom: 0px;">
+    <%= link_to "see all", menu_items_path, style: "text-decoration: none; color: black; font-size: 15px;" %>
+  </div>
+  <ul class="list-group" data-menu_items-target="list">
+      <% @menu_items.each do |menu_item| %>
       <% if menu_item.name == "1" %>
         <li class="list-group-item"><%= menu_item.name %></li>
       <% else %>
@@ -84,3 +67,29 @@
       <% end %>
     <% end %>
   </ul>
+
+  <div id="menu_items-carousel" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+      <% @menu_items.each_with_index do |menu_item, index| %>
+
+        <div class="carousel-item <%= 'active' if index == 0 %>">
+          <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path menu_item.photo.key %>')">
+            <%= menu_item.name %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+
+    <button class="carousel-control-prev" type="button" data-bs-target="#menu_items-carousel" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+
+    <button class="carousel-control-next" type="button" data-bs-target="#menu_items-carousel" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+
+  </div>
+
+</div>
