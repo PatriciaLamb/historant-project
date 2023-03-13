@@ -2,6 +2,7 @@
   overflow: hidden;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  border-radius: 5px;
 }
 
 .card-showpage > img {
@@ -28,4 +29,8 @@
 
 .card-review {
   padding: 16px;
+}
+
+.card-end {
+  padding-bottom: 16px;
 }

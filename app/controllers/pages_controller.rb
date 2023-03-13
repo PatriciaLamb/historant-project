@@ -10,6 +10,18 @@ class PagesController < ApplicationController
     @menu_items = current_user.menu_items
   end
 
+  def map
+    @places = current_user.places
+    @markers = @places.geocoded.map do |place|
+      {
+        lat: place.latitude,
+        lng: place.longitude,
+        info_windows_html: render_to_string(partial: "info_windows", locals: {place: place}),
+        marker_html: render_to_string(partial: "marker", locals: {place:place})
+      }
+    end
+  end
+
   def search
     if params[:query].present?
       @menu_items = MenuItem.global_search(params[:query])
