@@ -19,4 +19,12 @@
     </div>
     <% end %>
   </div>
+
+  <% if user_signed_in? && current_user == @place.user %>
+    <%= link_to "Edit", edit_place_path(@place), class: "btn btn-primary" %>
+
+    <%= link_to "Delete",
+    place_path(@place), class: "btn btn-danger",
+    data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}%>
+  <% end %>
 </div>

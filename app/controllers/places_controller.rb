@@ -5,6 +5,21 @@ class PlacesController < ApplicationController
     @places = current_user.places
   end
 
+  def edit
+    @places = current_user.places.find(params[:id])
+  end
+
+  def update
+    @places = current_user.places.find(params[:id])
+    if @places.update(place_params)
+      flash[:success] = "The place has been updated"
+      redirect_to places_path(@places)
+    else
+      flash[:error] = "Your data is not saved. Please provide valid data and try again."
+      render :edit, status: :unprocessable_entity
+    end
+  end
+
   def show
     @place = Place.find(params[:id])
     @menu_items = @place.menu_items
@@ -27,7 +42,7 @@ class PlacesController < ApplicationController
   end
 
   def destroy
-    @place = Place.find(params[:id])
+    @place = current_user.Place.find(params[:id])
     @place.destroy
     redirect_to places_path
   end
