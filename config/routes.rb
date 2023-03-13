@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   get "search", to: "pages#search", as: :search
   get "profile", to: "pages#profile"
 
+
   resources :places, only: %i[new create destroy show index] do # edit update
     resources :menu_items, only: %i[new create]
   end
