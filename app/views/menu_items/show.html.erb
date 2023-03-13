@@ -40,5 +40,58 @@
       <p><em><%= @menu_item.description %></em></p>
     </div>
   </div>
+  <%# <a href="/dashboard" class="btn btn-ghost" role="button">Go to dashboard</a> %>
+  <div class="container">
+  <div class="card-showpage mb-4">
+    <%= cl_image_tag @menu_item.photo.key%>
+
+    <div class="card-showpage-infos">
+      <h2><%= @menu_item.name %></h2>
+      <p><em>from &nbsp<%=@menu_item.place.name %></em></p>
+    </div>
+
+    <div class="row card-showpage-infos">
+      <div class= "col-6">
+        <p><strong>Category:</strong></p>
+        <p><em><%= @menu_item.category %></em></p>
+      </div>
+      <div class= "col-6">
+        <p><strong>visited on:</strong></p>
+        <p><em><%= @menu_item.visit_date.strftime("%A, %b %d") %></em></p>
+      </div>
+    </div>
+
+    <div class="row card-showpage-infos">
+      <div class= "col-6">
+        <p><strong>Rating:</strong></p>
+        <p>
+          <% @menu_item.rating.times do %>
+            <i class="fa-solid fa-star"></i>
+          <% end %>
+          <% (5 - @menu_item.rating).times do %>
+            <i class="fa-regular fa-star"></i>
+          <% end %>
+        </p>
+      </div>
+      <div class= "col-6">
+        <p><strong>Price:</strong></p>
+        <p><em><%= @menu_item.price %>€</em></p>
+      </div>
+    </div>
+    <div class="card-review">
+      <p><strong>Review:</strong></p>
+      <p><em><%= @menu_item.description %></em></p>
+    </div>
+  </div>
   <a href="/dashboard" class="btn btn-ghost" role="button">Go to dashboard</a>
+
+  <% if user_signed_in? && current_user == @menu_item.user %>
+  <%= link_to "Edit", edit_menu_item_path(@menu_item), class: "btn btn-primary" %>
+
+<%= link_to "Delete",
+    menu_item_path(@menu_item), class: "btn btn-danger",
+    data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
+  %>
+
+<%= end %>
 </div>

@@ -1,0 +1,15 @@
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-xs-12 col-sm-4 col-sm-offset-4">
+      <h2>Edit place </h2>
+      <%= simple_form_for(@places) do |f| %>
+        <%= f.input :category, collection: %w[Bakery Bar Buffet Cafe Food\ Truck Patisserie Restaurant Other] %>
+        <%= f.input :name %>
+        <%= f.input :cuisine, collection: %w[American Chinese German Greek Indian Italian Mexican Oriental Spanish Japanese Thai Turkish Vietnamese Other]%>
+        <%= f.input :address %>
+        <%= f.submit "Update place", class: "btn btn-primary" %>
+        <%= link_to "Back", places_path(@places), class: "btn btn-secondary" %>
+      <% end %>
+    </div>
+  </div>
+</div>
