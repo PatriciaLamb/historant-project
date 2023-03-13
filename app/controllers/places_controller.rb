@@ -3,12 +3,6 @@ class PlacesController < ApplicationController
 
   def index
     @places = current_user.places
-    @markers = @places.geocoded.map do |place|
-      {
-        lat: place.latitude,
-        lng: place.longitude
-      }
-    end
   end
 
   def show

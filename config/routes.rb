@@ -3,8 +3,9 @@ Rails.application.routes.draw do
   root to: "pages#home"
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
   get "dashboard", to: "pages#dashboard"
-  get "search", to: "pages#search", as: :search
+  get "search", to: "pages#search"
   get "profile", to: "pages#profile"
+  get "map", to: "pages#map"
 
 
   resources :places, only: %i[new create destroy show index] do # edit update

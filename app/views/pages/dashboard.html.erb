@@ -1,6 +1,6 @@
 <div class="container">
   <h1>Dashboard</h1>
-  <h2>Places you have visited</h2>
+  <h2>Your recent places</h2>
 <% unless @places.nil? %>
   <div id="places-carousel" class="carousel slide" data-bs-ride="carousel">
     <ol class="carousel-indicators">
@@ -41,7 +41,7 @@
 
   <br>
 
-  <h2>You Have Eaten</h2>
+  <h2>Your recent orders</h2>
   <div id="menu_items-carousel" class="carousel slide" data-bs-ride="carousel">
     <div class="carousel-inner">
       <% @menu_items.each_with_index do |menu_item, index| %>

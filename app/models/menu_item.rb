@@ -1,6 +1,5 @@
 class MenuItem < ApplicationRecord
   include PgSearch::Model
-  multisearchable against: [:category, :name, :description]
 
   belongs_to :place
   has_one_attached :photo
