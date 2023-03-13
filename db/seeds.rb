@@ -7,9 +7,10 @@
 #   Character.create(name: "Luke", movie: movies.first)
 require "open-uri"
 
-Place.destroy_all
 MenuItem.destroy_all
+Place.destroy_all
 User.destroy_all
+
 
 user = User.create(
   email: "user@admin.com",
