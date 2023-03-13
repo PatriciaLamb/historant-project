@@ -1,10 +1,12 @@
-<% if !place.menu_items.empty? && place.menu_items.last.photo.attached? %>
-  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path place.menu_items.last.photo.key %>')">
-    <%= place.name %>
-  </div>
+<%= link_to place_path(place), class:"card-link" do %>
+  <% if !place.menu_items.empty? && place.menu_items.last.photo.attached? %>
+    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path place.menu_items.last.photo.key %>')">
+      <%= place.name %>
+    </div>
 
-<% else %>
-  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
-    <%= place.name %>
-  </div>
+  <% else %>
+    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
+      <%= place.name %>
+    </div>
+  <% end %>
 <% end %>

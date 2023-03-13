@@ -11,16 +11,7 @@
     <div class="carousel-inner">
       <% @places.each_with_index do |place, index| %>
         <div class="carousel-item <%= 'active' if index == 0 %>">
-          <% if !place.menu_items.empty? && place.menu_items.last.photo.attached? %>
-            <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path place.menu_items.last.photo.key %>')">
-              <%= place.name %>
-            </div>
-
-          <% else %>
-            <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
-              <%= place.name %>
-            </div>
-          <% end %>
+          <%= render "places/place_card", place:place %>
         </div>
       <% end %>
     </div>
@@ -55,9 +46,7 @@
     <div class="carousel-inner">
       <% @menu_items.each_with_index do |menu_item, index| %>
         <div class="carousel-item <%= 'active' if index == 0 %>">
-          <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path menu_item.photo.key %>')">
-            <%= menu_item.name %>
-          </div>
+          <%= render "menu_items/menu_item_card", menu_item: menu_item %>
         </div>
       <% end %>
     </div>
