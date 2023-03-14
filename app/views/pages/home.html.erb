@@ -1,13 +1,8 @@
-<div class="container">
-  <div class="row">
-    <div class="card mx-auto col-sm-6 mt-5 border-0 home">
-      <strong><h1>Welcome to</h1></strong>
-      <img src="https://res.cloudinary.com/dwrkiuiqa/image/upload/v1678205141/Historant-logo-BIG-LOGO_vhiqzm.png" width="200" class="card-img-top" alt="Logo">
-      <div class="card-body text-center">
-        <h3>Already a member? <%= link_to "Log in", user_session_path %> </h3>
-        <h3>New to Historant? <%= link_to "Sign up", new_user_registration_path %></h3>
-        <h3> <%= link_to "Sign out", destroy_user_session_path, data: {turbo_method: :delete} %> </h3>
-      </div>
-    </div>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1537047902294-62a40c20a6ae?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8cmVzdGF1cmFudHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=800&q=60);">
+  <div class="container">
+    <img src="https://res.cloudinary.com/dwrkiuiqa/image/upload/v1678439564/Historant-logo-BIG-LOGO-WHITE_huxdwd.png" width="200" class="card-img-top" alt="Logo">
+    <p>Forgot what you have already ordered once? Not anymore!</p>
+    <h3>Already a member? <%= link_to "Log in", user_session_path %> </h3>
+    <h3>New to Historant? <%= link_to "Sign up", new_user_registration_path %></h3>
   </div>
 </div>
