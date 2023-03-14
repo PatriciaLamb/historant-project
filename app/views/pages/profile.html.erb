@@ -1,35 +1,12 @@
-<div class="container my-4 py-4">
-  <div class="container-background">
-    <h1>Your Profile</h1>
-    <div class="col-lg-8">
-      <div class="card mx-auto col-sm-6 mt-5 border-0">
-        <div class="card-body">
-          <div class="row">
-            <div class="col-sm-3">
-              <p class="mb-0">Email:</p>
-            </div>
-            <div class="col-sm-9">
-              <p class="text-muted mb-0">user@admin.com</p>
-            </div>
-          </div>
-          <hr>
-          <div class="row">
-            <div class="col-sm-3">
-              <p class="mb-0">Name:</p>
-            </div>
-            <div class="col-sm-9">
-              <p class="text-muted mb-0">Patricia Lambertz</p>
-            </div>
-          </div>
-          <hr>
-          <div class="row">
-            <div class="col-sm-3">
-              <p class="mb-0">Mobile:</p>
-            </div>
-            <div class="col-sm-9">
-              <p class="text-muted mb-0">(+49) 765-4321</p>
-            </div>
-          </div>
-        </div>
-      </div>
+
+<div class="d-flex justify-content-center align-items-center" style="height: 100vh;">
+  <div class="card text-white bg-light mb-3" style="max-width: 20rem; height: 20rem">
+    <div class="card-header" style="font-size: 30px; color: black; font-weight: bold;">Your Profile</div>
+    <div class="card-body">
+      <h5 class="card-title"style="color: black;">Full Name</h5>
+      <p class="card-text;" style="color: black;"><%= @user.first_name%> <%= @user.last_name%></p>
+      <h5 class="card-title;" style="color: black;">Email</h5>
+      <p class="card-text;" style="color: black;"><%= @user.email %></p>
+    </div>
+  </div>
 </div>

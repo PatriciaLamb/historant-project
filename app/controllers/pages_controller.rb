@@ -5,6 +5,10 @@ class PagesController < ApplicationController
     @no_navbar = true
   end
 
+  def profile
+    @user = current_user
+  end
+
   def dashboard
     @places = current_user.places.last(5)
     @menu_items = current_user.menu_items
