@@ -1,9 +1,19 @@
 <div class="container">
-  <div class="card-showpage mb-4">
+  <div class="card-showpage my-4">
     <%= cl_image_tag @menu_item.photo.key%>
-
     <div class="card-showpage-infos">
-      <h2><%= @menu_item.name %></h2>
+      <div class= "d-flex justify-content-between">
+        <h2><%= @menu_item.name %></h2>
+        <div class= "icons">
+          <%= link_to edit_menu_item_path(@menu_item), class: "text-decoration-none text-dark" do %>
+            <i class="fa-regular fa-pen-to-square"></i>
+          <% end %>
+          <%= link_to menu_item_path(@menu_item), class: "text-decoration-none text-dark",
+          data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} do %>
+            <i class="fa-solid fa-trash-can"></i>
+          <% end %>
+        </div>
+      </div>
       <p><em>from&nbsp<%=@menu_item.place.name %></em></p>
     </div>
 
@@ -41,13 +51,6 @@
     </div>
     <div class="card-end">
       <a href="/dashboard" class="btn btn-ghost" role="button">Go to dashboard</a>
-      <% if user_signed_in? && current_user == @menu_item.user %>
-        <%= link_to "Edit", edit_menu_item_path(@menu_item), class: "btn btn-primary" %>
-
-        <%= link_to "Delete",
-          menu_item_path(@menu_item), class: "btn btn-danger",
-          data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}%>
-      <% end %>
     </div>
   </div>
 
