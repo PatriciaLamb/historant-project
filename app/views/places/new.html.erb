@@ -1,14 +1,41 @@
 <div class="container">
   <div class="row justify-content-center">
     <div class="col-xs-12 col-sm-4 col-sm-offset-4">
-      <h2>Add a place </h2>
-      <%= simple_form_for(@place) do |f| %>
-        <%= f.input :category, collection: %w[Bakery Bar Buffet Cafe Food\ Truck Patisserie Restaurant Other] %>
-        <%= f.input :name %>
-        <%= f.input :cuisine, collection: %w[American Chinese German Greek Indian Italian Mexican Oriental Spanish Japanese Thai Turkish Vietnamese Other]%>
-        <%= f.input :address %>
-        <%= f.submit "Add place", class: "btn btn-ghost" %>
-      <% end %>
+      <div class="form-login" data-controller="choose-place">
+
+        <%= simple_form_for (@place) do |f| %>
+        <h2>Where was it?</h2>
+        <h4>Choose a place:</h4>
+        <%= f.input :name, required: false, collection: Place.all, input_html: { data: { choose_place_target: "select" }, { action: "choosePlace#hide" }} %>
+        <br>
+
+        <div data-choose-place-target="newPlace">
+          <h4>Or add a new place:</h4>
+          <%= f.input :name %>
+          <%= f.input :category, collection: %w[Bakery Bar Buffet Cafe Food\ Truck Patisserie Restaurant Other] %>
+          <%= f.input :name %>
+          <%= f.input :cuisine, collection: %w[American Chinese German Greek Indian Italian Mexican Oriental Spanish Japanese Thai Turkish Vietnamese Other] %>
+          <%= f.input :address %>
+        </div>
+        <br>
+
+        <h2>What did you have?</h2>
+        <%= f.simple_fields_for :menu_items do |ff| %>
+          <%= ff.input :name %>
+          <%= ff.input :category, collection: %w[Bakery\ item Beverage Cake Dessert Main\ course Salad Sandwich/Wrap Side\ dish Snack Soup Starter Other] %>
+          <%= ff.input :price %>
+          <%= ff.input :visit_date, as: :date %>
+          <br>
+
+          <h2>How did you find it?</h2>
+            <%= ff.input :rating %>
+            <%= ff.input :description %>
+            <%= ff.input :photo, as: :file %>
+        <% end %>
+
+        <%= f.submit "Create", class: "btn-ghost" %>
+        <% end %>
+      </div>
     </div>
   </div>
 </div>

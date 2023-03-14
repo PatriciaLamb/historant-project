@@ -1,23 +1,11 @@
-<nav class="navbar navbar-light d-flex sticky-top row justify-content-around">
+<nav class="navbar navbar-light sticky-top row">
   <div class="container-fluid">
-    <!-- New -->
-    <button class="navbar-icon btn fa-2x magnifier-icon flex-fill" type="button">
-      <%= link_to "/" do %>
-      <i class="fa-sharp fa-solid fa-plus text-white"></i>
-      <% end %>
-    </button>
-    <!-- Search -->
-    <button class="navbar-icon magnifier-icon btn fa-2x flex-fill" type="button">
-      <%= link_to "/search" do %>
-      <i class="fa-sharp fa-solid fa-magnifying-glass text-white"></i>
-      <% end %>
-    </button>
     <!-- Logo -->
-    <%= link_to "/", class: "navbar-brand flex-fill justify-content-center" do %>
+    <%= link_to "/", class: "navbar-brand" do %>
       <%= image_tag "https://res.cloudinary.com/dwrkiuiqa/image/upload/v1678439564/Historant-logo-BIG-LOGO-WHITE_huxdwd.png" %>
     <% end %>
     <!-- Menu -->
-    <button class="navbar-icon navbar-toggler btn fa-2x flex-fill" id="navbar-button" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+    <button class="navbar-icon navbar-toggler btn fa-2x" id="navbar-button" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
       <span class="fa-sharp fa-solid fa-bars"></span>
     </button>
     <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">

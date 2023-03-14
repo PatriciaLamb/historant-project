@@ -4,6 +4,9 @@
 
 import { application } from "./application"
 
+import ChoosePlaceController from "./choose_place_controller"
+application.register("choose-place", ChoosePlaceController)
+
 import HelloController from "./hello_controller"
 application.register("hello", HelloController)
 
