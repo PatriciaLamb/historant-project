@@ -6,10 +6,10 @@
         <%= simple_form_for (@place) do |f| %>
         <h2>Where was it?</h2>
         <h4>Choose a place:</h4>
-        <%= f.input :name, required: false, collection: Place.all, input_html: { data: { choose_place_target: "select" }, { action: "choosePlace#hide" }} %>
-        <br>
+        <%= f.input :name, required: false, collection: Place.all, input_html: { data: { choose_place_target: "select", action: "choose-place#hide" }} %>
 
         <div data-choose-place-target="newPlace">
+          <br>
           <h4>Or add a new place:</h4>
           <%= f.input :name %>
           <%= f.input :category, collection: %w[Bakery Bar Buffet Cafe Food\ Truck Patisserie Restaurant Other] %>
