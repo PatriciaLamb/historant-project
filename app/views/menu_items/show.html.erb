@@ -4,7 +4,7 @@
 
     <div class="card-showpage-infos">
       <h2><%= @menu_item.name %></h2>
-      <p><em>from &nbsp<%=@menu_item.place.name %></em></p>
+      <p><em>from&nbsp<%=@menu_item.place.name %></em></p>
     </div>
 
     <div class="row card-showpage-infos">
@@ -13,8 +13,8 @@
         <p><em><%= @menu_item.category %></em></p>
       </div>
       <div class= "col-6">
-        <p><strong>visited on:</strong></p>
-        <p><em><%= @menu_item.visit_date.strftime("%A, %b %d") %></em></p>
+        <p><strong>Visited on:</strong></p>
+        <p><em><%= @menu_item.visit_date.strftime("%e %b %Y") %></em></p>
       </div>
     </div>
 
