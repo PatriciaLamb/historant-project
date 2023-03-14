@@ -7,9 +7,10 @@
 #   Character.create(name: "Luke", movie: movies.first)
 require "open-uri"
 
-Place.destroy_all
 MenuItem.destroy_all
+Place.destroy_all
 User.destroy_all
+
 
 user = User.create(
   email: "user@admin.com",
@@ -22,7 +23,7 @@ user = User.create(
 mcdonalds = Place.new(
   {
     name: "McDonalds",
-    address: "Rudolfplatz 2",
+    address: "Rudolfplatz 2, Cologne",
     cuisine: "American",
     category: "Restaurant"
   }
@@ -33,7 +34,7 @@ mcdonalds.save!
 mongol = Place.new(
   {
     name: "Mongol",
-    address: "Friesenstraße 34",
+    address: "Friesenstraße 34, Cologne",
     category: "Bar"
   }
 )
@@ -43,7 +44,7 @@ mongol.save!
 punjabi = Place.new(
   {
     name: "Punjabi Palace",
-    address: "Venloer Straße 53",
+    address: "Venloer Straße 53, Cologne",
     cuisine: "Indian",
     category: "Restaurant"
   }
@@ -54,7 +55,7 @@ punjabi.save!
 cafe = Place.new(
   {
     name: "Cafe-Coffee-Day",
-    address: "Ehrenstraße 34",
+    address: "Ehrenstraße 34, Cologne",
     category: "Cafe"
   }
 )

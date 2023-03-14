@@ -1,13 +1,6 @@
 <div class="container">
   <div class="row row-cols-1 row-cols-md-3 g-4">
     <% @places.each do |place| %>
-      <div class="col">
-        <%= link_to place_path(place) do %>
-          <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
-              <%= place.name %>
-          </div>
-        <% end %>
-      </div>
+      <%= render "places/place_card", place: place %>
     <% end %>
   </div>
-</div>
