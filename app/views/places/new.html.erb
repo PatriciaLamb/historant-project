@@ -1,3 +1,4 @@
+<!--
 <div class="container">
   <div class="row justify-content-center">
     <div class="col-xs-12 col-sm-4 col-sm-offset-4">
@@ -6,7 +7,7 @@
         <%= simple_form_for (@place) do |f| %>
         <h2>Where was it?</h2>
         <h4>Choose a place:</h4>
-        <%= f.input :name, required: false, collection: Place.all, input_html: { data: { choose_place_target: "select" }, { action: "choosePlace#hide" }} %>
+        <%= f.input :name, required: false, collection: Place.all, input_html: { data: { choose_place_target: "select", action: "choosePlace#hide" }} %>
         <br>
 
         <div data-choose-place-target="newPlace">
@@ -39,3 +40,4 @@
     </div>
   </div>
 </div>
+-->
