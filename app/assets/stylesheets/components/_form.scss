@@ -16,3 +16,14 @@
     border-radius: 5px;
   }
 }
+
+.rating-input fieldset{
+  display: flex;
+  width: 100%;
+  legend {
+    display: none;
+  }
+  .form-check {
+    flex-grow: 1;
+  }
+}

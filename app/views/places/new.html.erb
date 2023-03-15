@@ -27,7 +27,11 @@
           <br>
 
           <h2>How did you find it?</h2>
-            <%= ff.input :rating %>
+          <p>rating:</p>
+            <div class="rating-input">
+            <%= ff.input :rating, collection: [1, 2, 3, 4, 5], as: :radio_buttons, lable: false %>
+            </div>
+
             <%= ff.input :description %>
             <%= ff.input :photo, as: :file %>
         <% end %>
