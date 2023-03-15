@@ -1,11 +1,13 @@
-<nav class="navbar navbar-light sticky-top row">
+<nav class="d-flex justify-content-between navbar navbar-light align-items-center fixed-top position-fixed">
   <div class="container-fluid">
+
     <!-- Logo -->
-    <%= link_to "/", class: "navbar-brand" do %>
+    <%= link_to "/", class: "navbar-brand mx-1 my-0" do %>
       <%= image_tag "https://res.cloudinary.com/dwrkiuiqa/image/upload/v1678439564/Historant-logo-BIG-LOGO-WHITE_huxdwd.png" %>
     <% end %>
+
     <!-- Menu -->
-    <button class="navbar-icon navbar-toggler btn fa-2x" id="navbar-button" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+    <button class="navbar-icon navbar-toggler btn fa-2x mx-4 fs-2" id="navbar-button" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
       <span class="fa-sharp fa-solid fa-bars"></span>
     </button>
     <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">

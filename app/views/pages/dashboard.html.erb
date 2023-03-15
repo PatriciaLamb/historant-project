@@ -1,11 +1,10 @@
 <div class="container">
 
-  <h2 style = "text-align: center;">Dashboard</h2>
+  <h2 style = "text-align: left;"> <%= @greeting %> <%= current_user.first_name %>!</h2>
 
-  <h5 style = "margin-bottom: 1px;">Places you have visited</h5>
+  <h5 style = "margin-bottom: 1px">Places you have visited</h5>
   <div class="d-flex justify-content-end" style="position: relative;">
-  <%= link_to places_path do %>
-    See All <i class="fa-solid fa-eye"></i>
+  <%= link_to places_path do %>See all</i>
   <% end %>
 </div>
 
@@ -47,10 +46,9 @@
 
   <br>
 
-<h5 style = "margin-bottom: 1px;">Your recent orders</h5>
+<h5 style = "margin-bottom: 1px">Your recent orders</h5>
 <div class="d-flex justify-content-end" style="position: relative;">
-  <%= link_to menu_items_path do %>
-     See All  <i class="fa-solid fa-eye"></i>
+  <%= link_to menu_items_path do %>See all</i>
   <% end %>
 
 </div>

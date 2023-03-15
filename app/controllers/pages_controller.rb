@@ -13,6 +13,19 @@ class PagesController < ApplicationController
   def dashboard
     @places = current_user.places.last(5)
     @menu_items = current_user.menu_items
+    time_greeting
+  end
+
+  def time_greeting
+    hour = Time.now.hour
+
+    if hour < 12
+      @greeting = "Good morning,"
+    elsif hour > 12
+      @greeting = "Good afternoon,"
+    elsif hour >= 18
+      @greeting = "Good evening,"
+    end
   end
 
   def map
