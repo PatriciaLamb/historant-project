@@ -4,7 +4,7 @@
       <h2><%= @place.name %></h2>
       <div class= "icons">
         <%= link_to edit_place_path(@place), class: "text-decoration-none text-dark" do %>
-          <i class="fa-regular fa-pen-to-square"></i>
+          <i class="fa-regular fa-pen-to-square mx-2"></i>
         <% end %>
         <%= link_to place_path(@place), class: "text-decoration-none text-dark",
         data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} do %>

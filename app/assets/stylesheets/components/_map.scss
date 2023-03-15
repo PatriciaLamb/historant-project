@@ -4,5 +4,21 @@
 
 .mapboxgl-popup-content {
   text-align: center;
-  font-family: "Open Sans", sans-serif;
+  font-family: 'Libre Baskerville', serif;
+  background-color: rgb(217, 217, 217);
+  text-decoration: none;
+}
+
+.windows-text {
+  text-decoration: none;
+  color: black;
+}
+
+.map-icon {
+  border-radius:5px;
+}
+
+.map-badge {
+  background-color: $btn-prim;
+  font-family: 'Raleway', sans-serif;
 }
