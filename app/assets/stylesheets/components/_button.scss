@@ -43,3 +43,31 @@
   background: rgba(0, 0, 0, .08);
   color: rgba(0, 0, 0, .3);
 }
+
+.btn-ghost-sec {
+  color: $btn-prim;
+  background-color: white;
+  border: 1px solid $btn-prim;
+  padding: 8px 24px;
+  border-radius: 5px;
+  font-weight: 600;
+  opacity: 0.9;
+  transition: opacity 0.3s ease;
+}
+
+.btn-ghost-sec:hover,
+.btn-ghost-sec:focus {
+  background-color: #7D0633;
+  color: #ffffff;
+}
+
+.btn-ghost-sec:active {
+  background: #7D0633;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.btn-ghost-sec:disabled {
+  cursor: not-allowed;
+  background: rgba(0, 0, 0, .08);
+  color: rgba(0, 0, 0, .3);
+}

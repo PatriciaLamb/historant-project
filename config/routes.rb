@@ -7,7 +7,6 @@ Rails.application.routes.draw do
   get "profile", to: "pages#profile"
   get "map", to: "pages#map"
 
-
   resources :places, only: %i[new create destroy show index edit update] do # edit update
     resources :menu_items, only: %i[new create]
   end

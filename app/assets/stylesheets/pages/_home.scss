@@ -7,29 +7,36 @@
   display: flex;
   align-items: center;
 }
+.card-img-top {
+  margin-top: 2rem;
+}
 
-.banner h1 {
-  margin: 0;
-  color: white;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-  font-size: 32px;
-  font-weight: bold;
+.slogan {
+  margin-bottom: 7rem;
 }
 
 .banner p {
   font-size: 20px;
   color: white;
-  opacity: .9;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
 }
 
-.banner h3 {
-  font-size: 20px;
+.home-footer {
+  background-color: rgba(0,0,0,0.5);
   color: white;
-  opacity: .9;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
 }
 
-.banner .btn {
-  color: white;
-}
+// .banner h1 {
+//   margin: 0;
+//   color: white;
+//   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+//   font-size: 32px;
+//   font-weight: bold;
+// }
+
+// .banner h3 {
+//   font-size: 20px;
+//   color: white;
+//   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+// }
