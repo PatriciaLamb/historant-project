@@ -448,7 +448,7 @@ cannoli.save!
 
 calzone = MenuItem.new(
   {
-    name: "Hot Salami-Mozzarella Calzone",
+    name: "Salami Calzone",
     price: 10,
     category: "Main course",
     visit_date: Date.today - 250,

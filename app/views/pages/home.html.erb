@@ -1,10 +1,12 @@
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1537047902294-62a40c20a6ae?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8cmVzdGF1cmFudHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=800&q=60);">
-  <div class="container">
+  <div class="container text-center">
     <img src="https://res.cloudinary.com/dwrkiuiqa/image/upload/v1678439564/Historant-logo-BIG-LOGO-WHITE_huxdwd.png" width="200" class="card-img-top" alt="Logo">
     <p>Forgot what you have already ordered once? Not anymore!</p>
-    
-    <h3>Already a member? <%= link_to "Log in", user_session_path, class: "btn btn-ghost"%> </h3>
-    <h3>New to Historant? <%= link_to "Sign up", new_user_registration_path, class: "btn btn-ghost" %></h3>
+
+    <p>Already a member?</p>
+    <%= link_to "Log in", user_session_path, class: "btn btn-ghost"%>
+    <p class="mt-4">New to Historant?</p>
+    <%= link_to "Sign up", new_user_registration_path, class: "btn btn-ghost" %>
 
     <div class="fixed-bottom text-center">
       <a>Find us here: </i></a>
