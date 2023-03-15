@@ -2,6 +2,15 @@
 
   <div class="navigation-btn">
     <button class="btn" type="button">
+      <%= link_to "/dashboard", class:"card-link" do %>
+        <i class="fa-solid fa-house text-white fs-4"></i>
+        <span class="d-block text-white fs-6">Home</span>
+      <% end %>
+    </button>
+  </div>
+
+  <div class="navigation-btn">
+    <button class="btn" type="button">
       <%= link_to "/search", class:"card-link" do %>
         <i class="fa-sharp fa-solid fa-magnifying-glass text-white fs-4"></i>
         <span class="d-block text-white fs-6">Search</span>
@@ -11,17 +20,8 @@
 
   <div class="navigation-btn">
     <button class="btn" type="button">
-      <%= link_to "/dashboard", class:"card-link" do %>
-        <i class="fa-sharp fa-solid fa-d text-white fs-4"></i>
-        <span class="d-block text-white fs-6">Dashboard</span>
-      <% end %>
-    </button>
-  </div>
-
-  <div class="navigation-btn">
-    <button class="btn" type="button">
       <%= link_to "/map", class:"card-link" do %>
-        <i class="fa-sharp fa-solid fa-map-pin text-white fs-4"></i>
+        <i class="fa-sharp fa-solid fa-location-dot text-white fs-4"></i>
         <span class="d-block text-white fs-6">Map</span>
       <% end %>
     </button>
