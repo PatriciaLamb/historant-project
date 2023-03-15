@@ -1,18 +1,21 @@
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1537047902294-62a40c20a6ae?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8cmVzdGF1cmFudHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=800&q=60);">
-  <div class="container text-center">
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://res.cloudinary.com/dwrkiuiqa/image/upload/v1678889223/chris-liverani-oCsaxvGCehM-unsplash_jivr6l.jpg);">
+  <div class="container text-start">
     <img src="https://res.cloudinary.com/dwrkiuiqa/image/upload/v1678439564/Historant-logo-BIG-LOGO-WHITE_huxdwd.png" width="200" class="card-img-top" alt="Logo">
-    <p>Forgot what you have already ordered once? Not anymore!</p>
+    <p class="slogan">Here you keep the history of what you have ordered once!</p>
 
-    <p>Already a member?</p>
-    <%= link_to "Log in", user_session_path, class: "btn btn-ghost"%>
-    <p class="mt-4">New to Historant?</p>
-    <%= link_to "Sign up", new_user_registration_path, class: "btn btn-ghost" %>
-
-    <div class="fixed-bottom text-center">
+    <% if user_signed_in? %>
+      <%= link_to "Home", dashboard_path, class: "btn btn-ghost"%>
+    <% else %>
+      <p>Already a member?</p>
+      <%= link_to "Log in", user_session_path, class: "btn btn-ghost"%>
+      <p class="mt-4">New to Historant?</p>
+      <%= link_to "Sign up", new_user_registration_path, class: "btn btn-ghost-sec" %>
+    <% end %>
+    <div class="home-footer fixed-bottom text-center">
       <a>Find us here: </i></a>
-      <a href="#"><i class="fab fa-github text-dark"></i></a>
-      <a href="#"><i class="fab fa-instagram text-dark"></i></a>
-      <a href="#"><i class="fab fa-facebook text-dark"></i></a>
+      <a href="#"><i class="fab fa-github text-light"></i></a>
+      <a href="#"><i class="fab fa-instagram text-light"></i></a>
+      <a href="#"><i class="fab fa-facebook text-light"></i></a>
       contact@historant.de
       Copyright <i class="fa-regular fa-copyright fs-6"></i> 2023 Historant
     </div>
