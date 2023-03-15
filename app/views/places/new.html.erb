@@ -4,7 +4,7 @@
       <div class="form-login" data-controller="choose-place">
 
         <%= simple_form_for (@place) do |f| %>
-        <h2>Where was it?</h2>
+        <h2>Where was the place?</h2>
         <h4>Choose a place:</h4>
         <%= f.input :name, required: false, collection: Place.all, input_html: { data: { choose_place_target: "select", action: "choose-place#hide" }} %>
 

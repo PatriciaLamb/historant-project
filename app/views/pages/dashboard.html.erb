@@ -1,58 +1,58 @@
 <div class="container">
+  <h2 style = "text-align: left"> <%= @greeting %> <%= current_user.first_name %>!</h2>
 
-  <h2 style = "text-align: left;"> <%= @greeting %> <%= current_user.first_name %>!</h2>
-
+  <!-- Places Carousel -->
   <h5 style = "margin-bottom: 1px">Places you have visited</h5>
   <div class="d-flex justify-content-end" style="position: relative;">
-  <%= link_to places_path do %>See all</i>
-  <% end %>
-</div>
-
-<ul class="list-group" data-places-target="list">
-  <% @places.each do |place| %>
-    <% if place.name == "1" %>
-      <li class="list-group-item"><%= place.name %></li>
-    <% else %>
-      <li class="list-group-item" hidden><%= place.name %></li>
+    <%= link_to places_path do %>See all</i>
     <% end %>
-  <% end %>
-</ul>
-
-<% unless @places.nil? %>
-  <div id="places-carousel" class="carousel slide" data-bs-ride="carousel">
-    <ol class="carousel-indicators">
-      <% @places.each_with_index do |place, index| %>
-        <li data-bs-target="#places-carousel" data-bs-slide-to="<%= index %>" class="<%= 'active' if index == 0 %>"></li>
-      <% end %>
-    </ol>
-    <div class="carousel-inner">
-      <% @places.each_with_index do |place, index| %>
-        <div class="carousel-item <%= 'active' if index == 0 %>">
-          <%= render "places/place_card", place:place %>
-        </div>
-      <% end %>
-    </div>
-    <a class="carousel-control-prev" href="#places-carousel" role="button" data-bs-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Previous</span>
-    </a>
-    <a class="carousel-control-next" href="#places-carousel" role="button" data-bs-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Next</span>
-    </a>
   </div>
 
-<% end %>
+  <ul class="list-group" data-places-target="list">
+    <% @places.each do |place| %>
+      <% if place.name == "1" %>
+        <li class="list-group-item"><%= place.name %></li>
+      <% else %>
+        <li class="list-group-item" hidden><%= place.name %></li>
+      <% end %>
+    <% end %>
+  </ul>
+
+  <% unless @places.nil? %>
+    <div id="places-carousel" class="carousel slide" data-bs-ride="carousel">
+      <ol class="carousel-indicators">
+        <% @places.each_with_index do |place, index| %>
+          <li data-bs-target="#places-carousel" data-bs-slide-to="<%= index %>" class="<%= 'active' if index == 0 %>"></li>
+        <% end %>
+      </ol>
+      <div class="carousel-inner">
+        <% @places.each_with_index do |place, index| %>
+          <div class="carousel-item <%= 'active' if index == 0 %>">
+            <%= render "places/place_card", place: place %>
+          </div>
+        <% end %>
+      </div>
+      <a class="carousel-control-prev" href="#places-carousel" role="button" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </a>
+      <a class="carousel-control-next" href="#places-carousel" role="button" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </a>
+    </div>
+  <% end %>
 
   <br>
 
-<h5 style = "margin-bottom: 1px">Your recent orders</h5>
-<div class="d-flex justify-content-end" style="position: relative;">
-  <%= link_to menu_items_path do %>See all</i>
-  <% end %>
+    <!-- Menu Items Carousel -->
+  <h5 style = "margin-bottom: 1px">Your recent orders</h5>
+  <div class="d-flex justify-content-end" style="position: relative;">
+    <%= link_to menu_items_path do %>See all</i>
+    <% end %>
+  </div>
 
-</div>
-<ul class="list-group" data-menu_items-target="list">
+  <ul class="list-group" data-menu_items-target="list">
     <% @menu_items.each do |menu_item| %>
       <% if menu_item.name == "1" %>
         <li class="list-group-item"><%= menu_item.name %></li>
@@ -62,21 +62,28 @@
     <% end %>
   </ul>
 
-  <div id="menu_items-carousel" class="carousel slide" data-bs-ride="carousel">
-    <div class="carousel-inner">
-      <% @menu_items.each_with_index do |menu_item, index| %>
-        <div class="carousel-item <%= 'active' if index == 0 %>">
-          <%= render "menu_items/menu_item_card", menu_item: menu_item %>
-        </div>
-      <% end %>
+  <% unless @menu_items.nil? %>
+    <div id="menu_items-carousel" class="carousel slide" data-bs-ride="carousel">
+      <ol class="carousel-indicators">
+        <% @menu_items.each_with_index do |menu_item, index| %>
+          <li data-bs-target="#menu_items-carousel" data-bs-slide-to="<%= index %>" class="<%= 'active' if index == 0 %>"></li>
+        <% end %>
+      </ol>
+      <div class="carousel-inner">
+        <% @menu_items.each_with_index do |menu_item, index| %>
+          <div class="carousel-item <%= 'active' if index == 0 %>">
+            <%= render "menu_items/menu_item_card", menu_item: menu_item %>
+          </div>
+        <% end %>
+      </div>
+      <a class="carousel-control-prev" href="#menu_items-carousel" role="button" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </a>
+      <a class="carousel-control-next" href="#menu_items-carousel" role="button" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </a>
     </div>
-    <button class="carousel-control-prev" type="button" data-bs-target="#menu_items-carousel" data-bs-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Previous</span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#menu_items-carousel" data-bs-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Next</span>
-    </button>
-  </div>
+  <% end %>
 </div>

@@ -1,5 +1,5 @@
 class PagesController < ApplicationController
-  skip_before_action :authenticate_user!, only: [ :home ]
+  skip_before_action :authenticate_user!, only: [:home]
 
   def home
     @no_navbar = true
@@ -12,7 +12,7 @@ class PagesController < ApplicationController
 
   def dashboard
     @places = current_user.places.last(5)
-    @menu_items = current_user.menu_items
+    @menu_items = current_user.menu_items.last(5)
     time_greeting
   end
 
@@ -34,8 +34,8 @@ class PagesController < ApplicationController
       {
         lat: place.latitude,
         lng: place.longitude,
-        info_windows_html: render_to_string(partial: "info_windows", locals: {place: place}),
-        marker_html: render_to_string(partial: "marker", locals: {place:place})
+        info_windows_html: render_to_string(partial: "info_windows", locals: { place: place }),
+        marker_html: render_to_string(partial: "marker", locals: { place: place })
       }
     end
   end

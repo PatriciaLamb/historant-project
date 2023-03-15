@@ -5,7 +5,7 @@
       <%= simple_form_for([@place, @menu_item]) do |f| %>
         <div class="form-inputs">
           <%= f.input :name %>
-          <%= f.input :category %>
+          <%= f.input :category, collection: %w[Bakery\ item Beverage Cake Dessert Main\ course Salad Sandwich/Wrap Side\ dish Snack Soup Starter Other] %>
           <%= f.input :price %>
           <%= f.input :visit_date %>
           <%= f.input :rating %>
