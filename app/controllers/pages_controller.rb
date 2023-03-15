@@ -3,6 +3,11 @@ class PagesController < ApplicationController
 
   def home
     @no_navbar = true
+    redirect_to dashboard_path if user_signed_in?
+  end
+
+  def profile
+    @user = current_user
   end
 
   def dashboard

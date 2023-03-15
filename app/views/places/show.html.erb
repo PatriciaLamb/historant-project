@@ -1,11 +1,20 @@
 <div class="container">
-  <div class="card mt-3 text-center">
+  <div class="place-info-card">
     <h1><%= @place.name %></h1>
-    <p><strong>Category: &nbsp</strong><%= @place.category %></p>
-    <% if @place.category == "Restaurant" %>
-      <p><strong>Cuisine: &nbsp</strong><%= @place.cuisine %></p>
-    <% end  %>
-    <p><strong>Address: &nbsp</strong><%= @place.address %></p>
+    <p><strong></strong><%= @place.cuisine %> <%= @place.category %></p>
+    <%# <% if @place.category == "Restaurant" %>
+      <%# <p><strong>Cuisine: &nbsp</strong><%= @place.cuisine %>
+    <%# <% end  %>
+    <p><strong><i class="fa-sharp fa-solid fa-location-dot"></i>  </strong><%= @place.address %></p>
+    <div class= "icons">
+      <%= link_to edit_place_path(@place), class: "text-decoration-none text-dark" do %>
+        <i class="fa-regular fa-pen-to-square"></i>
+      <% end %>
+      <%= link_to place_path(@place), class: "text-decoration-none text-dark",
+      data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} do %>
+        <i class="fa-solid fa-trash-can"></i>
+      <% end %>
+    </div>
   </div>
 
   <div class="row row-cols-1 row-cols-md-3 g-4">
@@ -19,12 +28,4 @@
     </div>
     <% end %>
   </div>
-
-  <% if user_signed_in? && current_user == @place.user %>
-    <%= link_to "Edit", edit_place_path(@place), class: "btn btn-primary" %>
-
-    <%= link_to "Delete",
-    place_path(@place), class: "btn btn-danger",
-    data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}%>
-  <% end %>
 </div>
