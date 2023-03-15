@@ -12,7 +12,7 @@ Rails.application.routes.draw do
     resources :menu_items, only: %i[new create]
   end
 
-  resources :menu_items, only: %i[new show index edit update destory] # edit update
+  resources :menu_items, only: %i[new show index edit update destroy] # edit update
   # Defines the root path route ("/")
   # root "articles#index"
 end
