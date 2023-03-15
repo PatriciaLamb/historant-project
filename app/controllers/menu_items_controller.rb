@@ -42,9 +42,9 @@ class MenuItemsController < ApplicationController
   end
 
   def destroy
-    @menu_item = current_user.menu_item.find(params[:id])
+    @menu_item = MenuItem.find(params[:id])
     @menu_item.destroy
-    redirect_to menu_item_path(@menu_item)
+    redirect_to dashboard_path
   end
 
   private

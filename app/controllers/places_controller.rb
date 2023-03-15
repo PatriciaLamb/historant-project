@@ -84,7 +84,7 @@ class PlacesController < ApplicationController
     # end
 
   def destroy
-    @place = current_user.Place.find(params[:id])
+    @place = Place.find(params[:id])
     @place.destroy
     redirect_to places_path
   end
@@ -93,9 +93,9 @@ class PlacesController < ApplicationController
 
   def place_params
     params
-    .require(:place)
-    .permit(:name, :address, :cuisine, :category,
-            menu_items_attributes: [:id, :name, :category, :price, :visit_date, :rating, :description, :photo])
+      .require(:place)
+      .permit(:name, :address, :cuisine, :category,
+       menu_items_attributes: [:id, :name, :category, :price, :visit_date, :rating, :description, :photo])
   end
 end
 
