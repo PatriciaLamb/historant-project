@@ -1,10 +1,10 @@
 .btn-ghost {
   align-items: center;
-  background-color: #E9A178;
+  background-color: $btn-prim;
   border: 0;
-  border-radius: 100px;
+  border-radius: 5px;
   box-sizing: border-box;
-  color: #000000;
+  color: #ffffff;
   cursor: pointer;
   display: inline-flex;
   font-family: -apple-system, system-ui, system-ui, "Segoe UI", Roboto, "Helvetica Neue", "Fira Sans", Ubuntu, Oxygen, "Oxygen Sans", Cantarell, "Droid Sans", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Lucida Grande", Helvetica, Arial, sans-serif;
@@ -29,13 +29,13 @@
 
 .btn-ghost:hover,
 .btn-ghost:focus {
-  background-color: #e88043;
-  color: #000000;
+  background-color: #7D0633;
+  color: #ffffff;
 }
 
 .btn-ghost:active {
-  background: #6e2800;
-  color: rgba(255, 255, 255, .7);
+  background: #7D0633;
+  color: rgba(255, 255, 255, 0.7);
 }
 
 .btn-ghost:disabled {
