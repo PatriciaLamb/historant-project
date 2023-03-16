@@ -1,6 +1,8 @@
 <div class="container">
-  <div class="row row-cols-1 row-cols-md-3 g-4">
+  <div class="row row-cols-1 row-cols-md-3 g-4 index-page">
+  <h2>Your places</h2>
     <% @places.each do |place| %>
       <%= render "places/place_card", place: place %>
     <% end %>
   </div>
+</div>

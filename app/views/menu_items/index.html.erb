@@ -1,6 +1,6 @@
 <div class="container">
-  <div class="row row-cols-1 row-cols-md-3 g-4">
-  <h2>See all your orders</h2>
+  <div class="row row-cols-1 row-cols-md-3 g-4 index-page">
+  <h2>Your orders</h2>
     <% @menu_items.each do |menu_item| %>
       <%= render "menu_items/menu_item_card", menu_item: menu_item %>
     <% end %>
