@@ -1,5 +1,7 @@
 <div class="container">
-  <h2 style = "text-start top"> <strong><%= @greeting %> <%= current_user.first_name %>!</strong></h2>
+  <div class="text-start top">
+    <h2><strong><%= @greeting %> <%= current_user.first_name %>!</strong></h2>
+  </div>
 
   <!-- Places Carousel -->
   <div class="row top">
@@ -49,10 +51,10 @@
   <br>
 
   <!-- Menu Items Carousel -->
-    <div class="row">
-      <h5 class="col-8 text-start">Your recent orders</h5>
-      <div class="col-4 text-end see-all">
-        <%= link_to menu_items_path do %>See all</i>
+  <div class="row">
+    <h5 class="col-8 text-start">Your recent orders</h5>
+    <div class="col-4 text-end see-all">
+      <%= link_to menu_items_path do %>See all</i>
         <i class="fa-solid fa-chevron-right fs-6">&nbsp</i>
       <% end %>
     </div>
