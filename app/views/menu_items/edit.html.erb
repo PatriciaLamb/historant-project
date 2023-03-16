@@ -1,7 +1,7 @@
 <div class="container">
   <div class="row justify-content-center">
     <div class="form col-xs-12 col-sm-4 col-sm-offset-4">
-      <h2>Edit your review </h2>
+      <h2>Edit your review</h2>
       <%= simple_form_for([@place, @menu_item]) do |f| %>
         <div class="form-inputs">
           <%= f.input :name %>
@@ -13,7 +13,9 @@
           <%= f.input :photo, as: :file %>
         </div>
         <div class="form-actions">
-          <%= f.button :submit, "Update", class: "btn btn-primary" %>
+          <%= f.button :submit, "Update", class: "btn btn-ghost mb-3" %>
+          <%= link_to "Back", menu_items_path(@menu_items), class: "btn btn-ghost-sec" %>
+
         </div>
       <% end %>
     </div>

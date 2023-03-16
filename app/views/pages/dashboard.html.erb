@@ -1,11 +1,14 @@
 <div class="container">
-  <h2 style = "text-align: left"> <%= @greeting %> <%= current_user.first_name %>!</h2>
+  <h2 style = "text-start top"> <%= @greeting %> <%= current_user.first_name %>!</h2>
 
   <!-- Places Carousel -->
-  <h5 style = "margin-bottom: 1px">Places you have visited</h5>
-  <div class="d-flex justify-content-end" style="position: relative;">
-    <%= link_to places_path do %>See all</i>
-    <% end %>
+  <div class="row top">
+    <h5 class="col-8 text-start">Your visited places</h5>
+    <div class="col-4 text-end see-all">
+      <%= link_to places_path do %>See all</i>
+      <i class="fa-solid fa-chevron-right fs-6">&nbsp</i>
+      <% end %>
+    </div>
   </div>
 
   <ul class="list-group" data-places-target="list">
@@ -45,11 +48,14 @@
 
   <br>
 
-    <!-- Menu Items Carousel -->
-  <h5 style = "margin-bottom: 1px">Your recent orders</h5>
-  <div class="d-flex justify-content-end" style="position: relative;">
-    <%= link_to menu_items_path do %>See all</i>
-    <% end %>
+  <!-- Menu Items Carousel -->
+    <div class="row">
+      <h5 class="col-8 text-start">Your recent orders</h5>
+      <div class="col-4 text-end see-all">
+        <%= link_to menu_items_path do %>See all</i>
+        <i class="fa-solid fa-chevron-right fs-6">&nbsp</i>
+      <% end %>
+    </div>
   </div>
 
   <ul class="list-group" data-menu_items-target="list">

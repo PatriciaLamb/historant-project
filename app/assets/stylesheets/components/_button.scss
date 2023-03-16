@@ -1,13 +1,12 @@
 .btn-ghost {
   align-items: center;
   background-color: $btn-prim;
-  border: 0;
+  border: 1px solid $btn-prim;
   border-radius: 5px;
   box-sizing: border-box;
   color: #ffffff;
   cursor: pointer;
   display: inline-flex;
-  font-family: -apple-system, system-ui, system-ui, "Segoe UI", Roboto, "Helvetica Neue", "Fira Sans", Ubuntu, Oxygen, "Oxygen Sans", Cantarell, "Droid Sans", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Lucida Grande", Helvetica, Arial, sans-serif;
   font-size: 16px;
   font-weight: 600;
   justify-content: center;
@@ -16,7 +15,7 @@
   min-height: 40px;
   min-width: 0px;
   overflow: hidden;
-  padding: 0px;
+  padding: 8px 24px;
   padding-left: 20px;
   padding-right: 20px;
   text-align: center;
@@ -25,17 +24,18 @@
   user-select: none;
   -webkit-user-select: none;
   vertical-align: middle;
+  width: 100%;
 }
 
 .btn-ghost:hover,
 .btn-ghost:focus {
   background-color: #7D0633;
-  color: #ffffff;
+  color: white;
 }
 
 .btn-ghost:active {
-  background: #7D0633;
-  color: rgba(255, 255, 255, 0.7);
+  background: $btn-prim;
+  color: white;
 }
 
 .btn-ghost:disabled {
@@ -45,25 +45,45 @@
 }
 
 .btn-ghost-sec {
+  align-items: center;
   color: $btn-prim;
   background-color: white;
   border: 1px solid $btn-prim;
-  padding: 8px 24px;
   border-radius: 5px;
+  padding: 8px 24px;
   font-weight: 600;
   opacity: 0.9;
   transition: opacity 0.3s ease;
+  box-sizing: border-box;
+  cursor: pointer;
+  display: inline-flex;
+  font-size: 16px;
+  font-weight: 600;
+  justify-content: center;
+  line-height: 20px;
+  max-width: 480px;
+  min-height: 40px;
+  min-width: 0px;
+  overflow: hidden;
+  padding-left: 20px;
+  padding-right: 20px;
+  text-align: center;
+  touch-action: manipulation;
+  user-select: none;
+  -webkit-user-select: none;
+  vertical-align: middle;
+  width: 100%;
 }
 
 .btn-ghost-sec:hover,
 .btn-ghost-sec:focus {
-  background-color: #7D0633;
-  color: #ffffff;
+  background-color: white;
+  color: $btn-prim;
 }
 
 .btn-ghost-sec:active {
-  background: #7D0633;
-  color: rgba(255, 255, 255, 0.7);
+  background: white;
+  color: $btn-prim;
 }
 
 .btn-ghost-sec:disabled {
