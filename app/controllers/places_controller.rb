@@ -15,7 +15,7 @@ class PlacesController < ApplicationController
       flash[:success] = "The place has been updated"
       redirect_to places_path(@places)
     else
-      flash[:error] = "Your data is not saved. Please provide valid data and try again."
+      flash[:notice] = "Your data is not saved. Please provide valid data and try again."
       render :edit, status: :unprocessable_entity
     end
   end
@@ -54,11 +54,13 @@ class PlacesController < ApplicationController
       # @menu_item.place = @place
       # @menu_item.save!
       redirect_to place_path(@place)
+      flash.now[:success] = "The place has been created"
     else
       render :new, status: :unprocessable_entity
+      flash.now[:errors] = "Your data is not saved. Please provide valid data and try again."
+      raise
     end
   end
-
     # @menu_item = MenuItem.new(menu_params)
 
     # respond_to do |format|
@@ -80,8 +82,8 @@ class PlacesController < ApplicationController
     #     end
     #     format.html { render :new }
     #     format.json { render json: @menu_item.errors, status: :unprocessable_entity }
-    #   end
-    # end
+    #  end
+  # end
 
   def destroy
     @place = Place.find(params[:id])

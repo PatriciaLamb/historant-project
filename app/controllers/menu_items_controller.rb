@@ -33,12 +33,13 @@ class MenuItemsController < ApplicationController
     @menu_item = MenuItem.new(menu_params)
     @menu_item.place = @place
     if @menu_item.save
-      redirect_to menu_item_path(@menu_item)
       flash.now[:success] = "The menu item has been created"
+      redirect_to menu_item_path(@menu_item)
     else
+      flash.now[:notice] = "Your data is not saved. Please provide valid data and try again."
       render :new, status: :unprocessable_entity
-      flash.now[:error] = "Your data is not saved. Please provide valid data and try again."
     end
+    raise
   end
 
   def destroy

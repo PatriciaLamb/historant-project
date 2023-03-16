@@ -6,7 +6,7 @@ class MenuItem < ApplicationRecord
   has_one_attached :photo
   has_one :user, through: :place
 
-  validates :name, :description, :visit_date, presence: true
+  validates :name, :description, :photo, :visit_date, presence: true
 
   pg_search_scope :global_search,
   against: [:category, :name, :description],

@@ -52,5 +52,17 @@
     <div class="card-end">
     </div>
   </div>
-
   <%# <a href="/dashboard" class="btn btn-ghost" role="button">Go to dashboard</a> %>
+
+ <!-- Display success message -->
+        <% if flash[:success] %>
+          <div class="alert alert-success">
+            <%= flash[:success] %>
+          </div>
+        <% end %>
+        <!-- Display error message -->
+        <% if flash[:error] %>
+          <div class="alert alert-danger">
+            <%= flash[:error] %>
+          </div>
+        <% end %>
