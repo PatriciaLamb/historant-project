@@ -18,7 +18,7 @@ class PagesController < ApplicationController
   def time_greeting
     hour = Time.now.hour
 
-    if hour < 12
+    if hour <= 12
       @greeting = "Good morning,"
     elsif hour > 12
       @greeting = "Good afternoon,"
