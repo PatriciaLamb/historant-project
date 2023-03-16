@@ -15,50 +15,49 @@ user = User.create(
   email: "user@admin.com",
   password: "123456",
   password_confirmation: "123456",
-  first_name: "Patricia",
+  first_name: "Lisa",
   last_name: "Lambertz"
 )
 
-sunshine = Place.new(
+ehrenfeldcafe = Place.new(
   {
-    name: "Cafe Sunshine",
-    address: "Richard-Wagner-Str. 12, 50674 Cologne, Germany",
-    cuisine: "Spanish",
+    name: "Ehrenfeld Cafe",
+    address: "Venloer Str. 176, 50823 Cologne, Germany",
     category: "Cafe"
   }
 )
 
-sunshine.user = user
-sunshine.save!
+ehrenfeldcafe.user = user
+ehrenfeldcafe.save!
 
-chez = Place.new(
+hof = Place.new(
   {
-    name: "Chez Céline",
-    address: "127 Rue de Bagnolet, 75020 Paris, France",
+    name: "Belgischer Hof",
+    address: "Brüsseler Str. 54, 50674 Cologne, Germany",
     cuisine: "French",
     category: "Restaurant"
   }
 )
 
-chez.user = user
-chez.save!
+hof.user = user
+hof.save!
 
-nolbu = Place.new(
+zen = Place.new(
   {
-    name: "Nolbu",
-    address: "Lambachstraße 23, 44145 Dortmund, Germany",
+    name: "Zen",
+    address: "Aachener Str. 20, 50674 Cologne, Germany",
     cuisine: "Japanese",
     category: "Restaurant"
   }
 )
 
-nolbu.user = user
-nolbu.save!
+zen.user = user
+zen.save!
 
 hanoi = Place.new(
   {
-    name: "Hanoi",
-    address: "Friesenstraße 123, 50670 Cologne, Germany",
+    name: "Hanoi 36",
+    address: "Venloer Str. 239B, 50823 Cologne, Germany",
     cuisine: "Vietnamese",
     category: "Restaurant"
   }
@@ -69,76 +68,62 @@ hanoi.save!
 
 hawaii = Place.new(
   {
-    name: "Hawaiian Dream",
-    address: "Hohe Str. 52, 50667 Cologne, Germany",
+    name: "Rainbow Poke",
+    address: "Auf dem Berlich 13, 50667 Cologne, Germany",
     cuisine: "Hawaiian",
-    category: "Bar"
+    category: "Restaurant"
   }
 )
 
 hawaii.user = user
 hawaii.save!
 
-
-banana = Place.new(
+licht = Place.new(
   {
-    name: "Sweet Banana",
-    address: "Via Nicola Porpora, 55, 10154 Torino TO, Italy",
-    cuisine: "Italian",
+    name: "Südlicht Cafe",
+    address: "Eifelwall 56, 50674 Cologen, Germany",
     category: "Cafe"
   }
 )
 
-banana.user = user
-banana.save!
+licht.user = user
+licht.save!
 
-ragatta = Place.new(
+pizza = Place.new(
   {
-    name: "RaGatta",
-    address: "Via del Corso, 181-188, 00186 Roma RM, Italy",
+    name: "Pizzeria Piccolo",
+    address: "Eifelwall 56, 50674 Cologne",
     cuisine: "Italian",
     category: "Restaurant"
   }
 )
 
-ragatta.user = user
-ragatta.save!
+pizza.user = user
+pizza.save!
 
-cherry = Place.new(
+tutto = Place.new(
   {
-    name: "Red Cherry",
-    address: "Wallrafplatz 5, 50667 Cologne, Germany",
+    name: "Tutto",
+    address: "Kreuzgasse 2-4, 50677 Cologne",
     cuisine: "Italian",
     category: "Restaurant"
   }
 )
 
-cherry.user = user
-cherry.save!
+tutto.user = user
+tutto.save!
 
-happy = Place.new(
+steaket = Place.new(
   {
-    name: "Happy Day",
-    address: "Wallrafplatz 5, 50667 Cologne, Germany",
-    cuisine: "Italian",
-    category: "Restaurant"
-  }
-)
-
-happy.user = user
-happy.save!
-
-imi = Place.new(
-  {
-    name: "Imi's Steakhouse",
-    address: "Stromstraße 41, 40221 Düsseldorf, Germany",
+    name: "Steaket",
+    address: "Hohenzollernring 17, 50672 Köln",
     cuisine: "American",
     category: "Restaurant"
   }
 )
 
-imi.user = user
-imi.save!
+steaket.user = user
+steaket.save!
 
 churros = MenuItem.new(
   {
@@ -155,7 +140,7 @@ file = URI.open("https://res.cloudinary.com/dwrkiuiqa/image/upload/v1678790563/r
 
 churros.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
 
-churros.place = sunshine
+churros.place = ehrenfeldcafe
 churros.save!
 
 rata = MenuItem.new(
@@ -173,7 +158,7 @@ file = URI.open("https://res.cloudinary.com/dwrkiuiqa/image/upload/v1678791016/m
 
 rata.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
 
-rata.place = chez
+rata.place = hof
 rata.save!
 
 basque = MenuItem.new(
@@ -191,7 +176,7 @@ file = URI.open("https://res.cloudinary.com/dwrkiuiqa/image/upload/v1678791538/b
 
 basque.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
 
-basque.place = chez
+basque.place = hof
 basque.save!
 
 souffle = MenuItem.new(
@@ -209,7 +194,7 @@ file = URI.open("https://res.cloudinary.com/dwrkiuiqa/image/upload/v1678791735/t
 
 souffle.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
 
-souffle.place = chez
+souffle.place = hof
 souffle.save!
 
 onion = MenuItem.new(
@@ -227,7 +212,7 @@ file = URI.open("https://res.cloudinary.com/dwrkiuiqa/image/upload/v1678791902/d
 
 onion.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
 
-onion.place = chez
+onion.place = hof
 onion.save!
 
 mushroom = MenuItem.new(
@@ -245,7 +230,7 @@ file = URI.open("https://res.cloudinary.com/dwrkiuiqa/image/upload/v1678792474/m
 
 mushroom.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
 
-mushroom.place = chez
+mushroom.place = hof
 mushroom.save!
 
 cider = MenuItem.new(
@@ -263,7 +248,7 @@ file = URI.open("https://res.cloudinary.com/dwrkiuiqa/image/upload/v1678792641/j
 
 cider.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
 
-cider.place = chez
+cider.place = hof
 cider.save!
 
 lyonnaise = MenuItem.new(
@@ -281,7 +266,7 @@ file = URI.open("https://res.cloudinary.com/dwrkiuiqa/image/upload/v1678793047/l
 
 lyonnaise.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
 
-lyonnaise.place = chez
+lyonnaise.place = hof
 lyonnaise.save!
 
 dragon = MenuItem.new(
@@ -299,7 +284,7 @@ file = URI.open("https://res.cloudinary.com/dwrkiuiqa/image/upload/v1678793813/8
 
 dragon.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
 
-dragon.place = nolbu
+dragon.place = zen
 dragon.save!
 
 bean = MenuItem.new(
@@ -308,7 +293,7 @@ bean = MenuItem.new(
     price: 4.50,
     category: "Dessert",
     visit_date: Date.today - 12,
-    rating: 2,
+    rating: 3,
     description: "Big portion! It wasn’t creamy at all, with lots of small ice pieces."
   }
 )
@@ -317,7 +302,7 @@ file = URI.open("https://res.cloudinary.com/dwrkiuiqa/image/upload/v1678794118/r
 
 bean.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
 
-bean.place = nolbu
+bean.place = zen
 bean.save!
 
 sashimi = MenuItem.new(
@@ -326,7 +311,7 @@ sashimi = MenuItem.new(
     price: 12,
     category: "Salad",
     visit_date: Date.today - 12,
-    rating: 5,
+    rating: 4,
     description: "Delicious but the sesame sauce could have been more!"
   }
 )
@@ -335,7 +320,7 @@ file = URI.open("https://res.cloudinary.com/dwrkiuiqa/image/upload/v1678794441/s
 
 sashimi.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
 
-sashimi.place = nolbu
+sashimi.place = zen
 sashimi.save!
 
 curry = MenuItem.new(
@@ -344,7 +329,7 @@ curry = MenuItem.new(
     price: 11.50,
     category: "Salad",
     visit_date: Date.today - 40,
-    rating: 5,
+    rating: 4,
     description: "Hot hot hot! Delicious! Sauce could have been more though. I had it with chicken. Maybe with fish next time?!"
   }
 )
@@ -358,39 +343,39 @@ curry.save!
 
 crab = MenuItem.new(
   {
-    name: "Crab & Asparagus Soup",
-    price: 6.50,
-    category: "Starter",
+    name: "Pho Bo",
+    price: 11.50,
+    category: "Main Course",
     visit_date: Date.today - 40,
     rating: 3,
-    description: "The asparagus was not so fresh!"
+    description: "Very low in taste, tasted almost like water?!"
   }
 )
 
-file = URI.open("https://res.cloudinary.com/dwrkiuiqa/image/upload/v1678794792/IMG_4689_kpkijy.jpg")
+file = URI.open("https://images.unsplash.com/photo-1478749485505-2a903a729c63?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8YXNwYXJhZ3VzJTIwc291cHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=800&q=60")
 
 crab.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
 
 crab.place = hanoi
 crab.save!
 
-lychee = MenuItem.new(
+poke = MenuItem.new(
   {
-    name: "Empress Gin and Lychee Gimlet Cocktail",
+    name: "Poke Bowl Classic",
     price: 8,
-    category: "Beverage",
+    category: "Main Course",
     visit_date: Date.today - 20,
     rating: 4,
-    description: "The taste was amazing! But too many ice cubes inside!"
+    description: "The taste was amazing! But the portion just too small, next time I'll better order the XL portion!"
   }
 )
 
-file = URI.open("https://res.cloudinary.com/dwrkiuiqa/image/upload/v1678795223/lychee3_cuuqau.jpg")
+file = URI.open("https://res.cloudinary.com/doeoic8ow/image/upload/v1678959764/miu-sua-pO9851jklaE-unsplash_amckoa.jpg")
 
-lychee.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
+poke.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
 
-lychee.place = hawaii
-lychee.save!
+poke.place = hawaii
+poke.save!
 
 popcorn = MenuItem.new(
   {
@@ -430,7 +415,7 @@ jerky.save!
 
 cannoli = MenuItem.new(
   {
-    name: "Pistachio Cannoli",
+    name: "Pistacchio Cannoli",
     price: 5,
     category: "Bakery item",
     visit_date: Date.today - 200,
@@ -443,7 +428,7 @@ file = URI.open("https://res.cloudinary.com/dwrkiuiqa/image/upload/v1678797185/P
 
 cannoli.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
 
-cannoli.place = banana
+cannoli.place = pizza
 cannoli.save!
 
 calzone = MenuItem.new(
@@ -461,7 +446,7 @@ file = URI.open("https://res.cloudinary.com/dwrkiuiqa/image/upload/v1678797184/c
 
 calzone.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
 
-calzone.place = ragatta
+calzone.place = tutto
 calzone.save!
 
 tiramisu = MenuItem.new(
@@ -479,7 +464,7 @@ file = URI.open("https://res.cloudinary.com/dwrkiuiqa/image/upload/v1678797186/m
 
 tiramisu.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
 
-tiramisu.place = ragatta
+tiramisu.place = tutto
 tiramisu.save!
 
 forest = MenuItem.new(
@@ -497,7 +482,7 @@ file = URI.open("https://res.cloudinary.com/dwrkiuiqa/image/upload/v1678798301/j
 
 forest.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
 
-forest.place = cherry
+forest.place = licht
 forest.save!
 
 streuselkuchen = MenuItem.new(
@@ -515,7 +500,7 @@ file = URI.open("https://res.cloudinary.com/dwrkiuiqa/image/upload/v1678798300/s
 
 streuselkuchen.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
 
-streuselkuchen.place = cherry
+streuselkuchen.place = licht
 streuselkuchen.save!
 
 maitai = MenuItem.new(
@@ -533,7 +518,7 @@ file = URI.open("https://res.cloudinary.com/dwrkiuiqa/image/upload/v1678798300/m
 
 maitai.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
 
-maitai.place = happy
+maitai.place = steaket
 maitai.save!
 
 buffalo = MenuItem.new(
@@ -547,11 +532,11 @@ buffalo = MenuItem.new(
   }
 )
 
-file = URI.open("https://res.cloudinary.com/dwrkiuiqa/image/upload/v1678798300/Buffalo-Honey-Hot-Wings-main2_smshzg.jpg")
+file = URI.open("https://res.cloudinary.com/dwrkiuiqa/image/upload/v1678960047/alexander-kovacs-viUQ9_iuFek-unsplash_pk206b.jpg")
 
 buffalo.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
 
-buffalo.place = happy
+buffalo.place = steaket
 buffalo.save!
 
 rib = MenuItem.new(
@@ -569,7 +554,7 @@ file = URI.open("https://res.cloudinary.com/dwrkiuiqa/image/upload/v1678798302/r
 
 rib.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
 
-rib.place = imi
+rib.place = steaket
 rib.save!
 
 burger = MenuItem.new(
@@ -578,7 +563,7 @@ burger = MenuItem.new(
     price: 14,
     category: "Main Course",
     visit_date: Date.today - 45,
-    rating: 5,
+    rating: 4,
     description: "Very delicious and juicy! Next time it can have more tomatoes and less onion."
   }
 )
@@ -587,12 +572,12 @@ file = URI.open("https://res.cloudinary.com/dwrkiuiqa/image/upload/v1678798305/o
 
 burger.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
 
-burger.place = imi
+burger.place = steaket
 burger.save!
 
 curly = MenuItem.new(
   {
-    name: "Curly Fries with Bacon",
+    name: "Fries with Bacon",
     price: 9,
     category: "Side dish",
     visit_date: Date.today - 27,
@@ -601,9 +586,9 @@ curly = MenuItem.new(
   }
 )
 
-file = URI.open("https://res.cloudinary.com/dwrkiuiqa/image/upload/v1678799058/Screenshot_2023-03-14curly_140346_nhy8am.jpg")
+file = URI.open("https://res.cloudinary.com/dwrkiuiqa/image/upload/v1678960047/sanket-shah-IA0UhqgGgNY-unsplash_h9utao.jpg")
 
 curly.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
 
-curly.place = imi
+curly.place = steaket
 curly.save!
