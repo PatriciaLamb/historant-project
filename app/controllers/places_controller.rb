@@ -58,7 +58,6 @@ class PlacesController < ApplicationController
     else
       render :new, status: :unprocessable_entity
       flash.now[:errors] = "Your data is not saved. Please provide valid data and try again."
-      raise
     end
   end
     # @menu_item = MenuItem.new(menu_params)
