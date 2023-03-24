@@ -31,11 +31,11 @@
             <h2>How did you find it?</h2>
             <p>Rating</p>
               <div class="rating-input">
-              <%= ff.input :rating, collection: [1, 2, 3, 4, 5], as: :radio_buttons, lable: false %>
+                <%= ff.input :rating, collection: [1, 2, 3, 4, 5], as: :radio_buttons, label: false %>
               </div>
 
               <%= ff.input :description %>
-              <%= ff.input :photo, as: :file %>
+              <%= ff.input :photo, as: :file, required: true %>
           <% end %>
 
           <%= f.submit "Create", class: "btn btn-ghost" %>
