@@ -1,8 +1,14 @@
-<div class="container">
+<div class="container px-4">
   <div class="row row-cols-1 row-cols-md-3 g-4 index-page">
   <h2>Your places</h2>
-    <% @places.each do |place| %>
-      <%= render "places/place_card", place: place %>
+    <% if @places.present? %>
+      <% @places.each do |place| %>
+        <%= render "places/place_card", place: place %>
+      <% end %>
+    <% else %>
+      <div class="p-4 text-center card-category bg-dark">
+        <p>No places yet!</p>
+      </div>
     <% end %>
   </div>
 </div>

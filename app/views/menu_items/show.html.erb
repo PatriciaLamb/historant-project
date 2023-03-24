@@ -1,6 +1,10 @@
 <div class="container">
   <div class="card-showpage my-4">
-    <%= cl_image_tag @menu_item.photo.key%>
+    <% if @menu_item.photo.present? %>
+      <%= cl_image_tag @menu_item.photo.key%>
+    <% else %>
+    <img src="https://res.cloudinary.com/dwrkiuiqa/image/upload/v1679675575/A_black_image.jpg_cqmwqb.webp">
+    <% end %>
     <div class="card-showpage-infos">
       <div class= "d-flex justify-content-between">
         <h2><%= @menu_item.name %></h2>
