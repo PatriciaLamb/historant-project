@@ -14,12 +14,18 @@
   </div>
 
   <ul class="list-group" data-places-target="list">
-    <% @places.each do |place| %>
-      <% if place.name == "1" %>
-        <li class="list-group-item"><%= place.name %></li>
-      <% else %>
-        <li class="list-group-item" hidden><%= place.name %></li>
+    <% if @places.present? %>
+      <% @places.each do |place| %>
+        <% if place.name == "1" %>
+          <li class="list-group-item"><%= place.name %></li>
+        <% else %>
+          <li class="list-group-item" hidden><%= place.name %></li>
+        <% end %>
       <% end %>
+    <% else %>
+      <div class="p-4 text-center card-category bg-dark">
+        <p>No places yet!</p>
+      </div>
     <% end %>
   </ul>
 
@@ -61,12 +67,18 @@
   </div>
 
   <ul class="list-group" data-menu_items-target="list">
-    <% @menu_items.each do |menu_item| %>
-      <% if menu_item.name == "1" %>
-        <li class="list-group-item"><%= menu_item.name %></li>
-      <% else %>
-        <li class="list-group-item" hidden><%= menu_item.name %></li>
+    <% if @menu_items.present? %>
+      <% @menu_items.each do |menu_item| %>
+        <% if menu_item.name == "1" %>
+          <li class="list-group-item"><%= menu_item.name %></li>
+        <% else %>
+          <li class="list-group-item" hidden><%= menu_item.name %></li>
+        <% end %>
       <% end %>
+    <% else %>
+      <div class="p-4 text-center card-category bg-dark">
+        <p>No orders yet!</p>
+      </div>
     <% end %>
   </ul>
 
