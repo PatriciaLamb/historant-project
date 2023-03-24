@@ -1,5 +1,5 @@
 class PagesController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:home]
+  skip_before_action :authenticate_user!, only: [:home, :dashboard]
 
   def home
     @no_navbar = true
@@ -10,8 +10,10 @@ class PagesController < ApplicationController
   end
 
   def dashboard
-    @places = current_user.places.last(5)
-    @menu_items = current_user.menu_items.last(5)
+    if current_user.places.present?
+      @places = current_user.places.last(5)
+      @menu_items = current_user.menu_items.last(5)
+    end
     time_greeting
   end
 
