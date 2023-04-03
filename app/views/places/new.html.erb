@@ -8,7 +8,7 @@
           <h2>Where was the place?</h2>
           <br>
           <h4>Choose a place:</h4>
-          <%= f.input :name, required: false, collection: Place.all, input_html: { data: { choose_place_target: "select", action: "choose-place#hide" }} %>
+          <%= f.input :name, required: false, collection: current_user.places, input_html: { data: { choose_place_target: "select", action: "choose-place#hide" }} %>
 
           <div data-choose-place-target="newPlace">
             <br>

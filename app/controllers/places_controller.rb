@@ -41,47 +41,11 @@ class PlacesController < ApplicationController
     @place = Place.new(place_params)
     @place.user = current_user
     if @place.save!
-      # @attributes = params["place"]["menu_items_attributes"]["0"]
-      # @menu_item = MenuItem.new(
-      #   name: @attributes["name"],
-      #   category: @attributes["category"],
-      #   price: @attributes["price"],
-      #   visit_date: Date.parse("#{@attributes["visit_date(3i)"]}-#{@attributes["visit_date(2i)"]}-#{@attributes["visit_date(1i)"]}"),
-      #   rating: @attributes["rating"],
-      #   description: @attributes["description"],
-      #   photo: @attributes["photo"]
-      # )
-      # @menu_item.place = @place
-      # @menu_item.save!
       redirect_to place_path(@place)
     else
       render :new, status: :unprocessable_entity
     end
   end
-
-    # @menu_item = MenuItem.new(menu_params)
-
-    # respond_to do |format|
-    #   unless @menu_item.nil?
-    #     @place.menu_item = @menu_item
-    #     if @place.valid?
-    #       @menu_item.save
-    #       @place.save
-    #       # flash.now[:success] = "Place has been created."
-    #       # redirect_to place_path(@place)
-    #     else
-    #       flash.now[:error] = "Unable to create place. Something went wrong."
-    #       render :new, status: :unprocessable_entity
-    #     end
-    #   else
-    #     puts "Unable to create menu item."
-    #     @menu_item.errors.full_messages.each do |mes|
-    #       puts mes
-    #     end
-    #     format.html { render :new }
-    #     format.json { render json: @menu_item.errors, status: :unprocessable_entity }
-    #   end
-    # end
 
   def destroy
     @place = Place.find(params[:id])
@@ -98,11 +62,3 @@ class PlacesController < ApplicationController
        menu_items_attributes: [:id, :name, :category, :price, :visit_date, :rating, :description, :photo])
   end
 end
-
-  #   if @place.save
-  #     redirect_to place_path(@place)
-  #     flash.now[:success] = "The Place has been created"
-  #   else
-  #     flash.now[:error] = "Your data is not saved. Please provide valid data and try again."
-  #     render :new, status: :unprocessable_entity
-  #   end

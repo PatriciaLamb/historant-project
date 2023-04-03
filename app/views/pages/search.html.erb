@@ -16,7 +16,7 @@
     <% end %>
   </div>
   <div class="row row-cols-1 row-cols-md-3 g-4">
-    <% @menu_items.each do |item| %>
+    <% current_user.menu_items.each do |item| %>
       <%= render "menu_items/menu_item_card", menu_item: item %>
     <% end %>
   </div>
